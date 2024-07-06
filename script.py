@@ -11,7 +11,7 @@ def run_command(base_command, client_folder, num_runs):
       os.makedirs(log_folder)
 
     # Construct the command with the incremented log folder
-    command = f"{base_command}{log_folder}"
+    command = f"{base_command} {log_folder}"
 
     # Print the command to be run (optional, for debugging)
     print(f"Running command: {command}")
