@@ -1,0 +1,19 @@
+1720500659.517248;36.777627;0.000061;22.809426;10;0;0;0
+|TBD|: 10 0 0 0 0 0 0
+tiles_720_z1: 11
+tiles_1080_z1: 0
+tiles_4k_z1: 0
+tiles_720_z2: 88
+tiles_1080_z2: 0
+tiles_4k_z2: 0
+tiles_720_z3: 429
+tiles_1080_z3: 0
+tiles_4k_z3: 0
+avgbitratez1: 80824.193017
+avgbitratez2: 227306.450506
+avgbitratez3: 344056.720402
+qualityswitch1: 0
+qualityswitch2: 0
+qualityswitch3: 0
+stall: 22.809426
+startuptime: 0.000061
