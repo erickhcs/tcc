@@ -14,7 +14,7 @@ v1=client.CoreV1Api()
 delay_thresold = 50
 nodes = ['worker1.vrk8s2.ilabt-imec-be.wall2.ilabt.iminds.be', 'worker2.vrk8s2.ilabt-imec-be.wall2.ilabt.iminds.be', 'worker3.vrk8s2.ilabt-imec-be.wall2.ilabt.iminds.be']
 scheduler_name = "vrscheduler"
-nodes_delay = [85, 70, 34]
+nodes_delay = [99, 72, 69]
 isSchedulerActive = False
 
 def scheduler(pod_name, node_name, namespace="default"):
@@ -91,7 +91,8 @@ def main():
         print(f"EVENT: {event['type']}; {current_pod.kind}; {current_pod.status.phase}; {current_pod.metadata.name}; {current_pod.spec.scheduler_name}")
         print(f"RESULT: {current_pod.status.phase == 'Pending' and current_pod.spec.scheduler_name == scheduler_name}") 
         
-        delete_pod_from_bad_node(bad_nodes, current_pod.metadata.name, current_pod.spec.node_name)
+        if isSchedulerActive == True and len(good_nodes) > 0:
+            delete_pod_from_bad_node(bad_nodes, current_pod.metadata.name, current_pod.spec.node_name)
 
         if current_pod.status.phase == "Pending" and current_pod.spec.scheduler_name == scheduler_name:
             try:
